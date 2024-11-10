@@ -1,4 +1,5 @@
 import { Button } from "~/components/button";
+import Navbar from "~/components/navbar";
 import { ThemeProvider } from "~/components/theme-provider";
 import { ThemeSwitcher } from "~/components/theme-switcher";
 
@@ -438,6 +439,7 @@ const LP_GRID_ITEMS = [
 
 const App = () => (
   <ThemeProvider>
+    <Navbar />
     <main>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
