@@ -53,6 +53,10 @@ const config = {
           "5": "hsl(var(--chart-5))",
         },
       },
+
+      backgroundImage: {
+        "hero-pattern": "url('/src/assets/herobg.png')",
+      },
     },
   },
   plugins: [animate],
