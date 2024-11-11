@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import ComputersCanvas from "~/components/three/canvas/computer";
 import styles from "~/constants/styles";
+import cssModules from "./styles.module.css";
 
 const Hero = () => (
   <section className={`relative mx-auto h-screen w-full`}>
@@ -9,7 +10,7 @@ const Hero = () => (
     >
       <div className="mt-5 flex flex-col items-center justify-center">
         <div className="size-5 rounded-full bg-[#915EFF]" />
-        <div className="violet-gradient h-40 w-1 sm:h-80" />
+        <div className={`${cssModules.violetGradient} h-40 w-1 sm:h-80`} />
       </div>
 
       <div>

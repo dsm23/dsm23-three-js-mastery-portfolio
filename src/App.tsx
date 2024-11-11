@@ -440,9 +440,11 @@ const LP_GRID_ITEMS = [
 
 const App = () => (
   <ThemeProvider>
-    <Navbar />
     <main>
-      <Hero />
+      <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+        <Navbar />
+        <Hero />
+      </div>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">

@@ -1,0 +1,13 @@
+.violetGradient {
+  background-image: #804dee;
+}
+
+@supports (background-image: linear-gradient(blue, red)) {
+  .violetGradient {
+    background-image: linear-gradient(
+      -180deg,
+      #804dee 0%,
+      rgba(60 51 80 / 0%) 100%
+    );
+  }
+}
