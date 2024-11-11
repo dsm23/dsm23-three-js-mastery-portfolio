@@ -13,6 +13,18 @@ vi.stubGlobal("matchMedia", (query: string) => ({
   dispatchEvent: vi.fn(),
 }));
 
+class ResizeObserver {
+  callback: globalThis.ResizeObserverCallback;
+  constructor(callback: globalThis.ResizeObserverCallback) {
+    this.callback = callback;
+  }
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+}
+
+vi.stubGlobal("ResizeObserver", ResizeObserver);
+
 describe("component", () => {
   describe("App", () => {
     it("should render correctly", () => {
