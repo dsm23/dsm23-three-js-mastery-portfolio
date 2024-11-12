@@ -2,15 +2,11 @@ import { describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
 import App from "./App";
 
-vi.stubGlobal("matchMedia", (query: string) => ({
-  matches: false,
-  media: query,
-  onchange: null,
-  addListener: vi.fn(), // Deprecated
-  removeListener: vi.fn(), // Deprecated
-  addEventListener: vi.fn(),
-  removeEventListener: vi.fn(),
-  dispatchEvent: vi.fn(),
+const IntersectionObserverMock = vi.fn(() => ({
+  disconnect: vi.fn(),
+  observe: vi.fn(),
+  takeRecords: vi.fn(),
+  unobserve: vi.fn(),
 }));
 
 class ResizeObserver {
@@ -23,7 +19,20 @@ class ResizeObserver {
   disconnect = vi.fn();
 }
 
+vi.stubGlobal("matchMedia", (query: string) => ({
+  matches: false,
+  media: query,
+  onchange: null,
+  addListener: vi.fn(), // Deprecated
+  removeListener: vi.fn(), // Deprecated
+  addEventListener: vi.fn(),
+  removeEventListener: vi.fn(),
+  dispatchEvent: vi.fn(),
+}));
+
 vi.stubGlobal("ResizeObserver", ResizeObserver);
+
+vi.stubGlobal("IntersectionObserver", IntersectionObserverMock);
 
 describe("component", () => {
   describe("App", () => {
