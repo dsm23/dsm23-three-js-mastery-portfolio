@@ -1,3 +1,4 @@
+import About from "~/components/about";
 import { Button } from "~/components/button";
 import Hero from "~/components/hero";
 import Navbar from "~/components/navbar";
@@ -445,6 +446,7 @@ const App = () => (
         <Navbar />
         <Hero />
       </div>
+      <About />
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
